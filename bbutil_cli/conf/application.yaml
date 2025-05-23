@@ -1,0 +1,65 @@
+server:
+    #   address: 0.0.0.0
+    address: localhost
+    port: 9999
+    active: release
+    # active: dev
+
+client:
+    username: superadmin
+    address: 2023-08-31
+
+dataSource:
+    # type: mysql postgres sqlite
+    type: postgres
+    username: waiqin365
+    password: FHuma025
+    host: 172.31.3.224
+    port: 5432
+    # Info Warn Error Slient
+    level: Error
+    database: bup
+
+dataSourcePool:
+    maxIdleConns: 2
+    maxOpenConns: 2
+    connMaxLifetime: 3600
+
+ldap:
+    host: 172.31.3.113
+    port: 389
+    bindDn: cn=Manager,dc=waiqin365,dc=com
+    passwd: ZKldap025
+    baseDn: ou=nanjing,ou=emplyees,dc=waiqin365,dc=com
+    groupBaseDn: ou=group,dc=waiqin365,dc=com
+
+# 获取前端包相关配置
+# 是否自动粘贴至对应的路径下
+needPaste: true
+branchList:
+    - code: 4
+      version: 7.1.80
+      srcPath: D:/code/patch4/src/main/webapp/sysapp/react/
+      targetPath: D:/code/patch4/target/高级拜访-1.2.1/sysapp/react/
+      # 压缩包前置路径，看一下是压缩包下的哪些文件粘贴到对应的目录下
+      prefixPath: /web/sysapp/react/
+    - code: 2
+      version: 7.1.80
+      srcPath: D:/code/patch2/src/main/webapp/sysapp/react/
+      targetPath: D:/code/patch2/target/高级拜访-1.2.1/sysapp/react/
+      prefixPath: /web/sysapp/react/
+rule:
+    - root: qince
+      prefix: qince
+      model:
+          - web-merp
+          - web-finance
+          - h5-merp
+          - web-platform
+          - web-tpm
+          - web-dms
+          - web-main
+    # - root: dinghuo-app
+    #   prefix: dinghuo365
+    #   model:
+    #       - live

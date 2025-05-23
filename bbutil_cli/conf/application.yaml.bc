@@ -1,0 +1,27 @@
+server:
+  address: 0.0.0.0
+  port: 8888
+  active: release
+  # active: dev
+
+client:
+  username: liuhailong
+  address: 172.31.2.191
+  groupid: 1001
+
+
+dataSource:
+  # type: mysql postgres sqlite
+  type: sqlite
+  # username: root
+  # password: 12345678
+  # host: localhost
+  # port: 3306
+  level: Warn
+  database: ./conf/bup.db
+
+dataSourcePool:
+  maxIdleConns: 2
+  maxOpenConns: 2
+  connMaxLifetime: 3600
+  
